@@ -28,12 +28,6 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      - Name: dotnet install ef
-        Run: dotnet tool install -g dotnet-ef
-        
-      - Name: dotnet bundle migration
-        run: dotnet ef migrations bundle --runtime linux-x64
-         
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -59,5 +53,5 @@ jobs:
         with:
           app-name: 'Webapp-TEST-JHE'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6C24CF782C5A41E5926650FC9BA1CFCD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_510A8114710D41B6AD8E77CC0F7074EB }}
           package: .
