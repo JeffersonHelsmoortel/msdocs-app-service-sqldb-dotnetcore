@@ -29,7 +29,7 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - Name: dotnet install ef
-         Run: dotnet toll install -g dotnet-ef
+         Run: dotnet tool install -g dotnet-ef
         
       - Name: dotnet bundle migration
         run: dotnet ef migrations bundle --runtime linux-x64
