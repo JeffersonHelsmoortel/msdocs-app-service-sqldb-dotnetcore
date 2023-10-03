@@ -24,11 +24,11 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-
+        
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-        - Name: dotnet install ef
+      - Name: dotnet install ef
          Run: dotnet tool install -g dotnet-ef
         
       - Name: dotnet bundle migration
